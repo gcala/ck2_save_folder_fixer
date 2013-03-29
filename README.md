@@ -1,7 +1,5 @@
-ck2_save_folder_fixer
-=====================
-
 Crusader Kings II Save Folder Fixer for Linux
+=============================================
 
 Version 0.1
 
@@ -29,4 +27,5 @@ After applying the fix move your saved games to the new location,
 for example:
 
 $ cd ~
+
 $ mv Documents/Paradox\ Interactive .config/Paradox\ Interactive
