@@ -5,11 +5,11 @@ Crusader Kings II Save Folder Fixer for Linux
 
 Version 0.1
 
-Requirements: Crusader Kings II, version 1.092
+Requirements: Crusader Kings II, version 1.092 (Steam version tested)
 
-DISCLAIMER: I'M NOT RESPONSIBLE FOR ANY VIOLATIONS THIS SCRIPT DOES TO CKII'S EULA.
+DISCLAIMER: I'M NOT RESPONSIBLE FOR ANY VIOLATIONS THIS SCRIPT DOES TO PARADOX' EULA.
 
-As any linux CKII know, the game uses a Windows-style save folder:
+As any linux gamer know, the game uses a Windows-style save folder:
 ~/Documents/Paradox Interactive/...
 
 This arise two kind of problems:
