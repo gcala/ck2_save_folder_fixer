@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Crusader Kings II Save Folder Fixer for Linux"
-echo "Version 0.1"
+echo "Version 1.092"
 echo
 echo "Requirements: Crusader Kings II, version 1.092"
 echo
