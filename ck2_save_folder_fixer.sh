@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "Crusader Kings II Save Folder Fixer for Linux"
-echo "Version 1.092"
+echo "Version 1.10"
 echo
-echo "Requirements: Crusader Kings II, version 1.092"
+echo "Requirements: Crusader Kings II, version 1.10"
 echo
 echo "DISCLAIMER: I'M NOT RESPONSIBLE FOR ANY VIOLATIONS THIS SCRIPT DOES TO CKII'S EULA."
 echo
@@ -17,7 +17,7 @@ echo
 echo " - in case of not-english localized desktops your home contains two Documents"
 echo "   folders: english and localized version. Not so good."
 echo
-echo "Recent patch 1.092 from Paradox didn't fix this issue."
+echo "Recent patch 1.10 from Paradox didn't fix this issue."
 echo
 echo "This scripts rewrites 9 bytes in ck2 so the game uses a more acceptable"
 echo "~/.config/Paradox Interactive"
@@ -31,7 +31,8 @@ echo
 
 applyFix () {
     file=ck2
-    original_sum="e556b1dea2d75bcababc68677126ffe6"
+    version=1.10
+    original_sum="5c7d523a0c02e7f525ab0a2562d2470f"
 
     if [ ! -f $file ]
     then
@@ -45,7 +46,7 @@ applyFix () {
     if [ "$original_sum" != "$current_sum" ]
     then
         echo "=> Checksum mismatch!!"
-        echo "   This script works only with version 1.092 of CKII"
+        echo "   This script works only with version 1.10 of CKII"
         echo "   Exiting"
         exit 1
     fi
@@ -54,23 +55,15 @@ applyFix () {
     echo "=> Checksum veriefied. Fine."
     echo
 
-    if [ -f $file-original ]
-    then
-        echo "=> Seems that current folder already contains a backup copy (ck2-original) of main executable."
-        echo "   Please, fix this and run the script again."
-        echo "   Exiting..."
-        exit 1;
-    fi
-
     echo "=> Backup original file..."
     echo
 
-    cp ck2 ck2-original
+    cp ck2 ck2-$version
 
     echo "=> Patching file..."
     echo
 
-    printf "\x2F\x2F\x2E\x63\x6F\x6E\x66\x69\x67" | dd of=$file bs=1 seek=15877753 count=9 conv=notrunc
+    printf "\x2F\x2F\x2E\x63\x6F\x6E\x66\x69\x67" | dd of=$file bs=1 seek=16380193 count=9 conv=notrunc
 
     echo
     echo "=> Done!"
