@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "Crusader Kings II Save Folder Fixer for Linux"
-echo "Version 1.10"
+echo "Version 1.101"
 echo
-echo "Requirements: Crusader Kings II, version 1.10"
+echo "Requirements: Crusader Kings II, version 1.101"
 echo
 echo "DISCLAIMER: I'M NOT RESPONSIBLE FOR ANY VIOLATIONS THIS SCRIPT DOES TO CKII'S EULA."
 echo
@@ -31,8 +31,8 @@ echo
 
 applyFix () {
     file=ck2
-    version=1.10
-    original_sum="5c7d523a0c02e7f525ab0a2562d2470f"
+    version=1.101
+    original_sum="0f3b188cfd5b7ac1ddd670a0cc63032f"
 
     if [ ! -f $file ]
     then
@@ -46,7 +46,7 @@ applyFix () {
     if [ "$original_sum" != "$current_sum" ]
     then
         echo "=> Checksum mismatch!!"
-        echo "   This script works only with version 1.10 of CKII"
+        echo "   This script works only with version $version of CKII"
         echo "   Exiting"
         exit 1
     fi
@@ -55,7 +55,7 @@ applyFix () {
     echo "=> Checksum veriefied. Fine."
     echo
 
-    echo "=> Backup original file..."
+    echo "=> Backing up original file..."
     echo
 
     cp ck2 ck2-$version
@@ -63,7 +63,7 @@ applyFix () {
     echo "=> Patching file..."
     echo
 
-    printf "\x2F\x2F\x2E\x63\x6F\x6E\x66\x69\x67" | dd of=$file bs=1 seek=16380193 count=9 conv=notrunc
+    printf "\x2F\x2F\x2E\x63\x6F\x6E\x66\x69\x67" | dd of=$file bs=1 seek=16405137 count=9 conv=notrunc
 
     echo
     echo "=> Done!"
