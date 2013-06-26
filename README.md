@@ -1,11 +1,8 @@
-Crusader Kings II Save Folder Fixer for Linux
-=============================================
+# Crusader Kings II Save Folder Fixer for Linux
 
-Version 1.101
+## Version 1.102
 
-Requirements: Crusader Kings II, version 1.101 (Steam version tested)
-
-DISCLAIMER: I'M NOT RESPONSIBLE FOR ANY VIOLATIONS THIS SCRIPT DOES TO PARADOX' EULA.
+Requirements: Crusader Kings II, version 1.102 (Steam version tested)
 
 As any linux gamer know, the game uses a Windows-style save folder:
 ~/Documents/Paradox Interactive/...
@@ -25,7 +22,11 @@ This scripts rewrites 9 bytes in ck2 so the game uses a more acceptable
 
 After applying the fix move your saved games to the new location,
 for example:
-
+```bash
 $ cd ~
-
 $ mv Documents/Paradox\ Interactive .config/Paradox\ Interactive
+```
+
+## DISCLAIMER
+
+I'M NOT RESPONSIBLE FOR ANY VIOLATIONS THIS SCRIPT DOES TO PARADOX' EULA.

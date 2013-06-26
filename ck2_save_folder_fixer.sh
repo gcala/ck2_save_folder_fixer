@@ -1,12 +1,14 @@
 #!/bin/bash
+version=1.102
+
 echo "Crusader Kings II Save Folder Fixer for Linux"
-echo "Version 1.101"
+echo "Version $version"
 echo
-echo "Requirements: Crusader Kings II, version 1.101"
+echo "Requirements: Crusader Kings II, version $version"
 echo
 echo "DISCLAIMER: I'M NOT RESPONSIBLE FOR ANY VIOLATIONS THIS SCRIPT DOES TO CKII'S EULA."
 echo
-echo "As any linux CKII know, the game uses a Windows-style save folder:"
+echo "As any linux CKII user know, the game uses a Windows-style save folder:"
 echo "~/Documents/Paradox Interactive/..."
 echo
 echo "This arise two kind of problems:"
@@ -17,7 +19,7 @@ echo
 echo " - in case of not-english localized desktops your home contains two Documents"
 echo "   folders: english and localized version. Not so good."
 echo
-echo "Recent patch 1.10 from Paradox didn't fix this issue."
+echo "Recent patch $version from Paradox didn't fix this issue."
 echo
 echo "This scripts rewrites 9 bytes in ck2 so the game uses a more acceptable"
 echo "~/.config/Paradox Interactive"
@@ -31,8 +33,7 @@ echo
 
 applyFix () {
     file=ck2
-    version=1.101
-    original_sum="0f3b188cfd5b7ac1ddd670a0cc63032f"
+    original_sum="34c1d77c64790b23cc7fbe0a273738ee"
 
     if [ ! -f $file ]
     then
@@ -63,7 +64,7 @@ applyFix () {
     echo "=> Patching file..."
     echo
 
-    printf "\x2F\x2F\x2E\x63\x6F\x6E\x66\x69\x67" | dd of=$file bs=1 seek=16405137 count=9 conv=notrunc
+    printf "\x2F\x2F\x2E\x63\x6F\x6E\x66\x69\x67" | dd of=$file bs=1 seek=16441777 count=9 conv=notrunc
 
     echo
     echo "=> Done!"
