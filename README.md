@@ -1,8 +1,8 @@
 # Crusader Kings II Save Folder Fixer for Linux
 
-## Version 1.102
+## Version 1.103
 
-Requirements: Crusader Kings II, version 1.102 (Steam version tested)
+Requirements: Crusader Kings II, version 1.103 (Steam version tested)
 
 As any linux gamer know, the game uses a Windows-style save folder:
 ~/Documents/Paradox Interactive/...
@@ -15,7 +15,7 @@ This arise two kind of problems:
  - in case of not-english localized desktops your home contains two Documents
    folders: english and localized version. Not so good.
 
-Recent patch 1.101 from Paradox didn't fix this issue.
+Recent patch 1.103 from Paradox didn't fix this issue.
 
 This scripts rewrites 9 bytes in ck2 so the game uses a more acceptable
 ~/.config/Paradox Interactive

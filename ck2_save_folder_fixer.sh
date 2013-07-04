@@ -1,5 +1,5 @@
 #!/bin/bash
-version=1.102
+version=1.103
 
 echo "Crusader Kings II Save Folder Fixer for Linux"
 echo "Version $version"
@@ -33,7 +33,7 @@ echo
 
 applyFix () {
     file=ck2
-    original_sum="34c1d77c64790b23cc7fbe0a273738ee"
+    original_sum="f48514f57b2ba17847fd41874983a403"
 
     if [ ! -f $file ]
     then
@@ -64,7 +64,7 @@ applyFix () {
     echo "=> Patching file..."
     echo
 
-    printf "\x2F\x2F\x2E\x63\x6F\x6E\x66\x69\x67" | dd of=$file bs=1 seek=16441777 count=9 conv=notrunc
+    printf "\x2F\x2F\x2E\x63\x6F\x6E\x66\x69\x67" | dd of=$file bs=1 seek=16446385 count=9 conv=notrunc
 
     echo
     echo "=> Done!"
